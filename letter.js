@@ -1,5 +1,5 @@
 
-Function Letter(value) {
+function Letter(value) {
     this.character = value;
     this.guessed = false;
     this.placeHolder = function () {
