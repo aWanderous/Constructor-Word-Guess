@@ -1,3 +1,6 @@
+var Word = require('./word');
+var inquirer = require('inquirer');
+
 // the counters starting points
 var wins = 0;
 var losses = 0;
@@ -25,6 +28,7 @@ function newHero() {
         guessCount = 10;
     }
 }
+
 
 inquirer
     .prompt([
