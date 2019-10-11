@@ -29,7 +29,7 @@ function newHero() {
     correctLetters = [];
     incorrectLetters = [];
     guessCount = 10;
-    var solved = false;
+    solved = false;
 };
 
 function play() {
@@ -46,8 +46,7 @@ function play() {
     if (wordDone.includes(false)) {
 
         inquirer
-            .prompt([
-                {
+            .prompt([{
                 type: "input",
                 message: "Guess a letter in the word.",
                 name: "guesses"
@@ -92,7 +91,7 @@ function play() {
                     console.log("Sorry, you lose...\n");
                     console.log("Score is:\nWins: " + wins + "\nLoses: " + losses);
                     reset();
-                }
+                };
 
                 function spelling(key) {
                     spellCheck.push(key.guessed)
@@ -123,6 +122,9 @@ function reset() {
             if (input.reset === "Play again") {
                 solved = true;
                 newHero();
+                play();
+            } else {
+                return
             }
         })
 }
