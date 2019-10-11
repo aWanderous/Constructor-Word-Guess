@@ -5,13 +5,10 @@ function Letter(value) {
 
         if (this.character === " ") {
             this.guessed = true;
-            console.log(" ");
             return " ";
         } else if (this.guessed === false) {
-            console.log("_");
             return "_";
         } else {
-            console.log(this.character);
             return this.character;
         }
     };

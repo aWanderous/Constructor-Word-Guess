@@ -11,7 +11,7 @@ function Word(answer) {
     this.log = function () {
         answerLog = "";
         for (var i = 0; i < this.hero.length; i++) {
-            answerLog + this.hero[i] + " ";
+            answerLog += this.hero[i] + " ";
         }
         console.log(answerLog + "\n");
     };
