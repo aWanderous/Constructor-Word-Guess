@@ -17,25 +17,47 @@ var heroes = ["hawkman", "aquaman", "batman", "superman", "wonder woman", "green
 var correctLetters = [];
 var incorrectLetters = [];
 
-
 function newHero() {
+    var theHero = heroes[Math.floor(Math.random() * heroes.length)];
+    var chosenHero = new Word(theHero);
+
+    var solved = false;
+    guessCount = 10;
+};
+
+function play() {
 
     if (solved) {
-        var theHero = heroes[Math.floor(Math.random() * heroes.length)];
-        var chosenHero = new Word(theHero);
+        newHero();
+    };
 
-        var solved = false;
-        guessCount = 10;
-    }
-}
+    var wordDone = [];
+    chosenHero.hero.forEach(spellCheck);
 
+    if (wordDone.includes(false)) {
 
-inquirer
-    .prompt([
-        type = "input",
-        message = "guess a letter in the word.",
-        name = "guesses"
-    ])
+        inquirer
+            .prompt([
+                type = "input",
+                message = "Guess a letter in the word.",
+                name = "guesses"
+            ]).then(function (input) {
 
+                if (!letters.includes(input.guesses) || input.guesses.length > 1 || input.guesses === "") {
+                    console.log("\n Please enter a letter.\n");
+                    play();
+                } else {
+                    if (incorrectLetters.includes(input.guesses) || correctLetters.includes(input.guesses)) {
+                        console.log("\n This letter has already been guessed\n");
+                        play();
+                    }
+                }
+
+            })
+
+    };
+
+};
 
 newHero();
+play();
