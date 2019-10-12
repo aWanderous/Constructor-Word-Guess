@@ -41,6 +41,7 @@ function play() {
     //test if letter correct
     var wordDone = [];
     chosenHero.hero.forEach(checkDone);
+    chosenHero.log();
 
     // letters left to guess
     if (wordDone.includes(false)) {
@@ -120,6 +121,7 @@ function reset() {
             name: "reset"
         }]).then(function (input) {
             if (input.reset === "Play again") {
+                console.log("---------- new word ----------")
                 solved = true;
                 newHero();
                 play();
