@@ -24,7 +24,7 @@ var solved = false;
 
 //generate new word
 function newHero() {
-    var theHero = heroes[Math.floor(Math.random() * heroes.length)];
+    theHero = heroes[Math.floor(Math.random() * heroes.length)];
     chosenHero = new Word(theHero);
     correctLetters = [];
     incorrectLetters = [];
